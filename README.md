@@ -4,15 +4,15 @@
 
 ## 小程序界面
 
-以下为 2026 年 10 月开发预览截图，内容与价格为示例数据。点击图片可查看大图。
+首页为开发预览截图；学习、订单、我的来自项目 UI 设计稿。内容、价格和用户信息均为示例，点击图片可查看大图。
 
 <table>
-  <tr><th>首页</th><th>视频课程</th><th>图书商城</th><th>会员试卷</th></tr>
+  <tr><th>首页</th><th>学习</th><th>订单</th><th>我的</th></tr>
   <tr>
     <td width="25%"><a href="docs/screenshots/home.png"><img src="docs/screenshots/home.png" alt="力山学堂首页" width="100%"></a></td>
-    <td width="25%"><a href="docs/screenshots/courses.png"><img src="docs/screenshots/courses.png" alt="视频课程列表" width="100%"></a></td>
-    <td width="25%"><a href="docs/screenshots/books.png"><img src="docs/screenshots/books.png" alt="自营图书商城" width="100%"></a></td>
-    <td width="25%"><a href="docs/screenshots/papers.png"><img src="docs/screenshots/papers.png" alt="会员试卷资料库" width="100%"></a></td>
+    <td width="25%"><a href="docs/screenshots/learning.png"><img src="docs/screenshots/learning.png" alt="学习页 UI 设计稿" width="100%"></a></td>
+    <td width="25%"><a href="docs/screenshots/orders.png"><img src="docs/screenshots/orders.png" alt="订单页 UI 设计稿" width="100%"></a></td>
+    <td width="25%"><a href="docs/screenshots/profile.png"><img src="docs/screenshots/profile.png" alt="我的页面 UI 设计稿" width="100%"></a></td>
   </tr>
 </table>
 
@@ -28,7 +28,7 @@
 | --- | --- |
 | [frontend](frontend/README.md) | 管理后台、小程序、共享领域模块，npm workspaces |
 | [backend](backend/README.md) | 后端服务、数据库迁移、配置模板与测试 |
-| [docs](docs/README.md) | 需求基线、接口约定、微信配置指南 |
+| [docs](docs/README.md) | 界面预览与开发维护入口 |
 
 ## 开发与部署
 
@@ -36,6 +36,6 @@
 2. 在 frontend 执行 npm ci，再按[前端说明](frontend/README.md)启动管理后台或 H5。
 3. 微信端构建后，将 frontend/miniprogram/dist/build/mp-weixin 导入微信开发者工具。
 
-[部署维护](backend/docs/deployment.md)说明服务器更新、配置、密钥与恢复方式。微信登录、支付和转账分别配置；商户支付配置及真实渠道验收尚未完成。需求文档中的功能范围不代表所有功能均已通过线上验收。
+[部署维护](backend/docs/deployment.md)说明服务器更新、配置、密钥与恢复方式。微信登录、支付和转账分别配置；商户支付配置及真实渠道验收尚未完成。功能范围不代表所有功能均已通过线上验收。
 
 仓库保存源码、必要素材、测试、锁文件及配置模板。本地数据库、上传文件、密钥、依赖与编译产物不入库。源码更新不会同步本地和服务器的数据。
