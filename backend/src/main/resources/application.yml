@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: jxsc-backend
+  profiles:
+    default: dev
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    hikari:
+      connection-init-sql: SET time_zone = '+00:00'
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  jackson:
+    time-zone: UTC
+    serialization:
+      write-dates-as-timestamps: false
+  flyway:
+    enabled: true
+server:
+  error:
+    include-message: never
+    include-stacktrace: never
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+jxsc:
+  providers:
+    identity: ${IDENTITY_PROVIDER_MODE:REAL}
+    payment: ${PAYMENT_PROVIDER_MODE:REAL}
+    transfer: ${TRANSFER_PROVIDER_MODE:REAL}
+    storage: ${STORAGE_PROVIDER_MODE:REAL}
+    video: ${VIDEO_PROVIDER_MODE:REAL}
+    logistics: ${LOGISTICS_PROVIDER_MODE:REAL}

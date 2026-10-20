@@ -1,0 +1,140 @@
+// HomeEditor layout patch. Keep the functional owner's Vue file untouched.
+// These editor classes are used only by the home decoration page.
+.main-content .admin-layout {
+  .editor-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .draggable-item-card {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+
+    .item-header {
+      flex-wrap: wrap;
+      gap: 12px;
+
+      .checkbox-label {
+        margin: 0;
+        flex: 0 1 auto;
+      }
+
+      .item-actions {
+        flex-wrap: wrap;
+        margin-left: auto;
+        max-width: 100%;
+      }
+    }
+
+    .item-fields .field-row {
+      min-width: 0;
+      align-items: flex-start;
+
+      > :not(.field-label) {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      > fieldset {
+        margin: 0;
+      }
+
+      fieldset {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      label {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      input:not([type='checkbox']),
+      select {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      input[type='file'] {
+        width: 100%;
+      }
+
+      .ls-asset-grid {
+        grid-template-columns: repeat(auto-fill, minmax(min(160px, 100%), 1fr));
+      }
+
+      .ls-asset-grid li {
+        min-width: 0;
+      }
+
+      .ls-asset-grid .el-button {
+        height: auto;
+        min-height: 32px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+    }
+  }
+
+  .publish-control-bar {
+    flex-wrap: wrap;
+    gap: 16px;
+
+    .publish-left {
+      flex: 1 1 340px;
+      flex-wrap: wrap;
+      min-width: 0;
+      max-width: 100%;
+
+      .el-input {
+        flex: 1 1 220px;
+        min-width: 0;
+        max-width: 100%;
+      }
+    }
+
+    .publish-right {
+      flex-wrap: wrap;
+      max-width: 100%;
+    }
+  }
+
+  .draggable-item-card .item-actions,
+  .publish-control-bar .publish-right {
+    .el-button + .el-button {
+      margin-left: 0;
+    }
+  }
+
+  .preview-pills .p-pill {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 1100px) {
+  .main-content .admin-layout {
+    .editor-grid-cols-2 {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .draggable-item-card .item-fields .field-row {
+      flex-direction: column;
+      gap: 8px;
+
+      > :not(.field-label) {
+        flex-basis: auto;
+        width: 100%;
+      }
+    }
+
+    .publish-control-bar {
+      padding: 16px;
+    }
+  }
+}

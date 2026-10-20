@@ -1,0 +1,13 @@
+.git
+.superpowers
+.runtime
+target
+.env
+secrets
+backups
+.env.*
+application-local.properties
+.idea
+*.zip
+*.pem
+*.key

@@ -1,0 +1,10 @@
+# Keep documents and media as binary files in Git diffs.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.docx binary
+*.xlsx binary
+*.mp4 binary

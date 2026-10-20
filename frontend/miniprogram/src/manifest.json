@@ -1,0 +1,14 @@
+{
+  "name": "力山学堂",
+  "appid": "wxa0d285fdd3a9aea0",
+  "description": "教学内容商城",
+  "versionName": "0.1.0",
+  "versionCode": "100",
+  "vueVersion": "3",
+  "mp-weixin": {
+    "appid": "wxa0d285fdd3a9aea0",
+    "setting": { "urlCheck": true, "compileHotReLoad": false },
+    "usingComponents": true
+  },
+  "h5": { "router": { "mode": "hash" } }
+}

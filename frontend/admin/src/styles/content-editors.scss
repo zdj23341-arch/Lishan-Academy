@@ -1,0 +1,89 @@
+.main-content .content-editor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 18px;
+  align-items: start;
+}
+.main-content .content-editor-layout > .editor-card,
+.main-content .content-editor-layout > .product-fields {
+  margin: 0;
+}
+.content-editor-sidebar {
+  min-width: 0;
+  position: sticky;
+  top: 20px;
+}
+.learning-editor-main {
+  min-width: 0;
+}
+.main-content .learning-fields {
+  margin-top: 0;
+}
+.main-content .learning-fields > label {
+  width: calc(50% - 16px);
+  min-width: 0;
+}
+.learning-fields > label input,
+.learning-fields > label select,
+.learning-fields > label textarea {
+  width: 100%;
+}
+.main-content .learning-fields > .learning-field-wide {
+  width: 100%;
+}
+.chapter-list {
+  padding-left: 24px;
+}
+.chapter-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--ls-line);
+  overflow-wrap: anywhere;
+  line-height: 2;
+}
+.chapter-list .el-button {
+  margin: 4px;
+}
+@media (max-width: 736px) {
+  .main-content .learning-fields > label {
+    width: 100%;
+  }
+}
+.content-editor-sidebar .publish-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+.content-editor-sidebar .publish-actions .el-button {
+  margin-left: 0;
+  width: 100%;
+  white-space: normal;
+  height: auto;
+  min-height: 38px;
+}
+.content-editor-sidebar .publish-help {
+  color: var(--ls-sub);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.main-content .content-editor-sidebar label {
+  width: 100%;
+  min-width: 0;
+  margin-right: 0;
+}
+@media (max-width: 1024px) {
+  .main-content .content-editor-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .content-editor-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+@media (max-width: 736px) {
+  .content-editor-sidebar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

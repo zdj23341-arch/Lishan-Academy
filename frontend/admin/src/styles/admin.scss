@@ -1,0 +1,174 @@
+// ============================================================
+// 力山学堂运营后台 · 全局样式入口
+// 引入设计系统 tokens，并定制 Element Plus 主题
+// ============================================================
+
+@import './admin-tokens.scss';
+
+// -------------------- 基础重置 --------------------
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  background-color: $color-bg-page;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  height: 100%;
+}
+
+// -------------------- 通用工具类 --------------------
+.text-ellipsis {
+  @extend %text-ellipsis;
+}
+
+.text-ellipsis-2 {
+  @extend %text-ellipsis-2;
+}
+
+// -------------------- Element Plus 主题定制 --------------------
+:root {
+  --el-color-primary: #{$brand-primary};
+  --el-color-primary-light-3: #{lighten($brand-primary, 10%)};
+  --el-color-primary-light-5: #{lighten($brand-primary, 20%)};
+  --el-color-primary-light-7: #{lighten($brand-primary, 30%)};
+  --el-color-primary-light-8: #{lighten($brand-primary, 35%)};
+  --el-color-primary-light-9: #{$brand-primary-lighter};
+  --el-color-primary-dark-2: #{$brand-primary-hover};
+
+  --el-color-success: #{$color-success};
+  --el-color-warning: #{$color-warning};
+  --el-color-danger: #{$color-danger};
+  --el-color-info: #{$color-info};
+
+  --el-border-radius-base: #{$radius-md};
+  --el-border-radius-small: #{$radius-sm};
+  --el-border-radius-round: #{$radius-full};
+
+  --el-border-color: #{$color-border};
+  --el-border-color-light: #{$color-border-light};
+  --el-border-color-lighter: #{$gray-100};
+
+  --el-text-color-primary: #{$color-text-primary};
+  --el-text-color-regular: #{$color-text-regular};
+  --el-text-color-secondary: #{$color-text-secondary};
+  --el-text-color-placeholder: #{$color-text-placeholder};
+  --el-text-color-disabled: #{$color-text-disabled};
+
+  --el-bg-color: #{$color-bg-card};
+  --el-bg-color-page: #{$color-bg-page};
+  --el-bg-color-overlay: #{$color-bg-card};
+
+  --el-fill-color: #{$gray-100};
+  --el-fill-color-light: #{$gray-50};
+  --el-fill-color-lighter: #{$gray-50};
+  --el-fill-color-extra-light: #{$gray-50};
+  --el-fill-color-blank: #{$color-bg-card};
+
+  --el-box-shadow: #{$shadow-sm};
+  --el-box-shadow-light: #{$shadow-xs};
+  --el-box-shadow-lighter: #{$shadow-xs};
+  --el-box-shadow-dark: #{$shadow-md};
+
+  --el-font-size-base: #{$font-size-base};
+  --el-font-size-small: #{$font-size-sm};
+  --el-font-size-extra-small: #{$font-size-xs};
+
+  --el-font-family: #{$font-family};
+}
+
+// -------------------- Element Plus 组件覆盖 --------------------
+.el-button {
+  font-weight: $font-weight-medium;
+  transition: all $transition-fast;
+
+  &--primary {
+    --el-button-bg-color: #{$brand-primary};
+    --el-button-border-color: #{$brand-primary};
+    --el-button-hover-bg-color: #{$brand-primary-hover};
+    --el-button-hover-border-color: #{$brand-primary-hover};
+    --el-button-active-bg-color: #{$brand-primary-active};
+    --el-button-active-border-color: #{$brand-primary-active};
+  }
+}
+
+.el-input {
+  --el-input-border-color: #{$color-border};
+  --el-input-hover-border-color: #{$gray-300};
+  --el-input-focus-border-color: #{$brand-primary};
+}
+
+.el-table {
+  --el-table-border-color: #{$color-border-light};
+  --el-table-header-bg-color: #{$gray-50};
+  --el-table-row-hover-bg-color: #{$gray-50};
+  --el-table-header-text-color: #{$color-text-secondary};
+  --el-table-text-color: #{$color-text-regular};
+
+  th.el-table__cell {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-xs;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.el-pagination {
+  --el-pagination-button-bg-color: #{$color-bg-card};
+  --el-pagination-hover-color: #{$brand-primary};
+}
+
+.el-dialog {
+  --el-dialog-border-radius: #{$radius-lg};
+}
+
+.el-message-box {
+  --el-messagebox-border-radius: #{$radius-lg};
+}
+
+.el-tag {
+  --el-tag-border-radius: #{$radius-sm};
+}
+
+// -------------------- 滚动条 --------------------
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $gray-300;
+  border-radius: 3px;
+
+  &:hover {
+    background: $gray-400;
+  }
+}
+
+// -------------------- 选中文本 --------------------
+::selection {
+  background: $brand-primary-light;
+  color: $brand-primary;
+}
+
+@import './design-system.scss';

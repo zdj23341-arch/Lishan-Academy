@@ -1,0 +1,46 @@
+# Dependencies and generated output
+node_modules/
+target/
+dist/
+dist-server/
+coverage/
+.vite/
+.build-temp/
+ui-*-build-*/
+*.log
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.jar
+*.class
+__pycache__/
+*.pyc
+
+# Local credentials and runtime data
+.env
+.env.local
+.env.*.local
+application-local.properties
+.runtime/
+secrets/
+backups/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.sql.gz
+*.dump
+*.bak
+compose.dev.yml
+project.private.config.json
+
+# Editor and agent scratch files
+.idea/
+*.iml
+.vscode/
+.workbuddy/
+.superpowers/
+.DS_Store
+Thumbs.db

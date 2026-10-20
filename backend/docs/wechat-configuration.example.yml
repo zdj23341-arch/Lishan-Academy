@@ -1,0 +1,42 @@
+# Copy to deployment secret configuration; do not store credentials in the repository.
+# All provider modes stay REAL in production. Enable only the capabilities actually approved.
+jxsc:
+  providers:
+    identity: REAL
+    payment: REAL
+    transfer: REAL
+  wechat:
+    app-id: ${WECHAT_APP_ID}
+    merchant-id: ${WECHAT_MERCHANT_ID}
+    login:
+      app-secret: ${WECHAT_APP_SECRET}
+    pay:
+      enabled: false
+      merchant-serial: ${WECHAT_MERCHANT_CERT_SERIAL}
+      private-key-file: ${WECHAT_MERCHANT_PRIVATE_KEY_FILE}
+      api-v3-key: ${WECHAT_API_V3_KEY}
+      # JSON object mapping trusted public-key IDs to local PEM files obtained through
+      # authenticated merchant platform provisioning. Include old+new IDs during rotation.
+      trusted-public-key-files: ${WECHAT_TRUSTED_PUBLIC_KEY_FILES}
+      # PUBLIC_KEY requires a trusted PUB_KEY_ID_* and sends it on every signed request.
+      # CERTIFICATE requires a blank response-key-id; pin its authenticated certificate public key.
+      response-signing-mode: PUBLIC_KEY
+      response-key-id: ${WECHAT_RESPONSE_KEY_ID}
+      # In PUBLIC_KEY mode this must equal response-key-id; one header selects both semantics.
+      encryption-key-id: ${WECHAT_ENCRYPTION_KEY_ID}
+      notify-base-url: https://replace-with-merchant-backend.example
+      book-jsapi-approved: false
+      # Allowed only with documented applicability for BOTH courses and memberships.
+      # Book approval alone never enables this setting. No xpay/short-drama assumption.
+      digital-path: UNCONFIGURED
+      digital-approval-reference: ""
+    transfer:
+      enabled: false
+      scene-id: ""
+      approval-reference: ""
+      # JSON array of {info_type,info_content} for the approved commission-remuneration scene.
+      scene-reports: "[]"
+      remark: 佣金报酬
+      max-fen: 100000
+    statements:
+      enabled: false

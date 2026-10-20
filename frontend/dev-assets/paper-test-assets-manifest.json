@@ -1,0 +1,22 @@
+{
+  "paper-sample.docx": {
+    "bytes": 36840,
+    "sha256": "84b64fd4a33322722af56c91a0e5cc818eec6b6b78524d17dc3782b346a5eba1"
+  },
+  "paper-sample.jpg": {
+    "bytes": 36116,
+    "sha256": "dc5c397b8ccca7f088672e60c08225f541608bedecc598e40308c88283139d91"
+  },
+  "paper-sample.pdf": {
+    "bytes": 1780,
+    "sha256": "2190cc878b0545f0e758be4ab33cd493598f28bd1713c6d88c7061b463d76231"
+  },
+  "paper-sample.png": {
+    "bytes": 29062,
+    "sha256": "7148d4a1119a01673810d7cfe690961b49d43e4df9717e0aff69cc85e9c1b05a"
+  },
+  "paper-sample.webp": {
+    "bytes": 18070,
+    "sha256": "6be97c7d47bef351a43c0c1cb7eb0967e1469e93bb368cc5a15f83430d19bd86"
+  }
+}

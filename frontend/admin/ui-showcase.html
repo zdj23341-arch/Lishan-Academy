@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>力山学堂 · UI 组件样板</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import { createApp, ref } from 'vue/dist/vue.esm-bundler.js';
+      import './src/styles/admin.scss';
+      import BrandMark from './src/components/ui/BrandMark.vue';
+      import UiIcon from './src/components/ui/UiIcon.vue';
+      import UiButton from './src/components/ui/UiButton.vue';
+      import UiStatusBadge from './src/components/ui/UiStatusBadge.vue';
+      import UiState from './src/components/ui/UiState.vue';
+      import PageHeader from './src/components/ui/PageHeader.vue';
+      import BookCover from './src/components/ui/BookCover.vue';
+      createApp({
+        components: { BrandMark, UiIcon, UiButton, UiStatusBadge, UiState, PageHeader, BookCover },
+        setup() {
+          return {
+            clicks: ref(0),
+            themes: ['blue', 'jade', 'sand', 'paper'],
+            tones: ['neutral', 'blue', 'success', 'warning', 'danger'],
+            icons: [
+              'house',
+              'book-open',
+              'video',
+              'crown',
+              'clipboard-list',
+              'truck',
+              'wallet',
+              'search',
+            ],
+          };
+        },
+        template: `<main class="showcase"><BrandMark /><PageHeader title="公共组件与状态样板" description="直接使用生产 Vue 组件；仅本地审阅，不新增业务路由。" />
+          <section><h2>按钮</h2><div class="row"><UiButton @click="clicks++">主要操作</UiButton><UiButton kind="secondary" @click="clicks++">次要操作</UiButton><UiButton kind="soft" @click="clicks++">轻操作</UiButton><UiButton kind="link" @click="clicks++">文字操作</UiButton><UiButton kind="danger" @click="clicks++">危险操作</UiButton><UiButton disabled @click="clicks++">禁用</UiButton><UiButton loading @click="clicks++" /></div><p>已触发 {{ clicks }} 次；禁用与处理中按钮不能触发。</p></section>
+          <section><h2>状态标签与线性图标</h2><div class="row"><UiStatusBadge v-for="tone in tones" :key="tone" :tone="tone" :label="{neutral:'未开始',blue:'进行中',success:'已完成',warning:'待审核',danger:'操作失败'}[tone]" /></div><div class="row icons"><UiIcon v-for="name in icons" :key="name" :name="name" tone="blue" :size="24" /></div></section>
+          <section><h2>封面与失败兜底</h2><div class="covers"><BookCover v-for="theme in themes" :key="theme" title="阅读与表达" :theme="theme" /><BookCover title="图片不可读时显示书封" image-url="/missing-showcase-cover.png" /></div></section>
+          <section><h2>异步与权限状态</h2><div class="states"><UiState kind="loading" title="正在加载" description="请稍候" /><UiState kind="empty" title="暂无内容" description="调整筛选条件后再试" /><UiState kind="error" title="加载遇到问题" description="网络恢复后可重试" action-label="重新加载" @action="clicks++" /><UiState kind="denied" title="暂无访问权限" description="请使用有权限的账号" /></div></section>
+        </main>`,
+      }).mount('#app');
+    </script>
+    <style>
+      .showcase {
+        max-width: 1200px;
+        margin: 32px auto;
+        padding: 24px;
+      }
+      .showcase section {
+        background: white;
+        border: 1px solid #e5ebf3;
+        border-radius: 12px;
+        padding: 24px;
+        margin: 24px 0;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+      .icons {
+        margin-top: 24px;
+        gap: 28px;
+      }
+      .covers {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .states {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+      h2 {
+        font-size: 17px;
+        margin-bottom: 20px;
+      }
+      p {
+        color: #617088;
+        font-size: 14px;
+      }
+      @media (max-width: 800px) {
+        .covers,
+        .states {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </body>
+</html>

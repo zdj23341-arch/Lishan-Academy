@@ -1,0 +1,17 @@
+node_modules/
+**/dist/
+coverage/
+*.local
+.env.local
+*.log
+dist-server/
+.vite/
+.build-temp/
+ui-*-build-*/
+*.zip
+*.tar.gz
+__pycache__/
+*.pyc
+project.private.config.json
+.idea/
+.workbuddy/

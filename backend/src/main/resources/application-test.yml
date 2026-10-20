@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: ${MYSQL_TEST_URL}
+    username: ${MYSQL_TEST_USERNAME}
+    password: ${MYSQL_TEST_PASSWORD}
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+jxsc:
+  tasks:
+    enabled: false
+  providers:
+    identity: ${IDENTITY_PROVIDER_MODE:DEV}
+    payment: ${PAYMENT_PROVIDER_MODE:DEV}
+    transfer: ${TRANSFER_PROVIDER_MODE:DEV}
+    storage: ${STORAGE_PROVIDER_MODE:DEV}
+    video: ${VIDEO_PROVIDER_MODE:DEV}
+    logistics: ${LOGISTICS_PROVIDER_MODE:DEV}

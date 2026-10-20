@@ -1,0 +1,54 @@
+# Copy to your deployment directory. Provision secret files outside the checkout.
+# Publish only the application behind a TLS reverse proxy. MySQL/ClamAV stay internal.
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_CONFIG_IMPORT: configtree:/run/secrets/
+      DB_URL: jdbc:mysql://mysql:3306/jxsc_prod?connectionTimeZone=UTC&forceConnectionTimeZoneToSession=true
+      DB_USERNAME: jxsc_app
+      JXSC_SCANNER_HOST: clamav
+      JXSC_SCANNER_PORT: 3310
+      JXSC_SCANNER_SPOOL_DIRECTORY: /var/lib/jxsc/scanner
+    ports: ["127.0.0.1:8080:8080"]
+    volumes:
+      - ${SECRET_DIRECTORY:?required}:/run/secrets:ro
+      - ${SCANNER_SPOOL_DIRECTORY:?required}:/var/lib/jxsc/scanner
+    tmpfs: ["/tmp:size=128m,uid=10001,gid=10001,mode=1700"]
+    read_only: true
+    mem_limit: 4g
+    cpus: 2
+    stop_grace_period: 45s
+    depends_on:
+      mysql: {condition: service_healthy}
+      clamav: {condition: service_started}
+  mysql:
+    image: mysql:8.0.44
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: jxsc_prod
+      MYSQL_USER: jxsc_app
+      MYSQL_PASSWORD_FILE: /run/secrets/spring.datasource.password
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql-root-password
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ${MYSQL_SECRET_DIRECTORY:?required}:/run/secrets:ro
+    command: ["--default-time-zone=+00:00"]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "--silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  clamav:
+    image: clamav/clamav:1.4
+    restart: unless-stopped
+    volumes:
+      - clamav-data:/var/lib/clamav
+      - ./docs/clamd.conf.example:/etc/clamav/clamd.conf:ro
+    mem_limit: 2g
+volumes:
+  mysql-data:
+  clamav-data:

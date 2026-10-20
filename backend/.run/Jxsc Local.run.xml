@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Jxsc Local" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="com.wechat.jxsc.JxscApplication" />
+    <module name="jxsc-backend" />
+    <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=dev,local" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

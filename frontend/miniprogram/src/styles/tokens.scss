@@ -1,0 +1,76 @@
+// 教学内容商城设计规范 Design Tokens
+// 严格对齐 docs/前端开发需求文档.md 第3章与第10章
+
+// 品牌核心色系
+$color-primary: #2855b7; // 主题蓝（知识、稳健）
+$color-primary-light: #edf3ff; // 主题蓝浅底色
+$color-primary-hover: #21489d; // 点击按下态
+$color-accent: #197460; // 清爽绿（试看、学习、成功、快捷入口）
+$color-accent-light: #eaf7f0; // 绿色浅背景
+$color-price: #c04436; // 现价、警示、倒计时强调色
+$color-price-light: #fff0ee; // 价格气泡与优惠浅底
+$color-warning: #976014; // 提示、审核中、待付款
+$color-warning-light: #fff5df;
+
+// 会员专属浅琥珀色系（保留既有变量名供页面兼容）
+$color-vip-dark: #18283e; // 会员正文深色
+$color-vip-gold: #976014; // 会员主金
+$color-vip-gold-light: #fff5df; // 会员卡浅金背景
+$color-vip-gradient: #fff5df;
+$color-vip-card-bg: #f7efdf;
+
+// 文字与内容色彩
+$color-text-main: #18283e; // 一级文字：标题、核心内容
+$color-text-sub: #617088; // 二级文字：摘要、说明、普通属性
+$color-text-secondary: #617088; // 三级文字：副标题、次要标签、原价
+$color-text-muted: #617088; // 辅助说明保持可读；禁用状态由控件透明度表达
+$color-text-white: #ffffff; // 纯白文字
+
+// 背景与卡片
+$color-bg-page: #f4f7fb; // 页面通用底色（浅灰阅读底色）
+$color-bg-card: #ffffff; // 卡片底色（纯白）
+$color-bg-gray: #f8f9fa; // 内部灰底块（输入框、引用块）
+$color-bg-hover: #f2f4f7; // 点击按下遮罩
+$color-border: #e5ebf3; // 边框线与分割线
+$color-border-light: #f2f4f8; // 弱分割线
+
+// 字体字号（750rpx设计基准）
+$font-size-hero: 44rpx; // 核心大数字、余额
+$font-size-title-lg: 36rpx; // 页面大标题、VIP大标
+$font-size-title: 32rpx; // 卡片标题、商品名（16px）
+$font-size-sub: 28rpx; // 正文、主要属性（14px）
+$font-size-desc: 26rpx; // 说明、标签、次要说明（13px）
+$font-size-caption: 24rpx; // 辅助信息、角标（12px）
+$font-size-micro: 24rpx; // 极小单位（¥符号、微标签）
+
+// 行高
+$line-height-normal: 1.5;
+$line-height-title: 1.35;
+$line-height-tight: 1.2;
+
+// 圆角系统
+$radius-xs: 6rpx;
+$radius-sm: 16rpx;
+$radius-md: 24rpx; // 卡片标准圆角（8px）
+$radius-lg: 24rpx; // 弹窗、大卡片圆角（12px）
+$radius-xl: 36rpx; // 胶囊、搜索栏
+$radius-full: 9999rpx; // 纯圆
+
+// 间距系统
+$spacing-xs: 8rpx; // 4px
+$spacing-sm: 12rpx; // 6px
+$spacing-md: 16rpx; // 8px - 卡片间距
+$spacing-lg: 24rpx; // 12px - 页面左右边距
+$spacing-xl: 32rpx; // 16px - 模块间距
+$spacing-2xl: 40rpx; // 20px - 大区块间距
+
+// 阴影系统
+$shadow-card: 0 4rpx 16rpx rgba(0, 0, 0, 0.04);
+$shadow-card-hover: 0 8rpx 24rpx rgba(0, 0, 0, 0.08);
+$shadow-float: 0 12rpx 32rpx rgba(47, 128, 237, 0.15);
+$shadow-gold: 0 8rpx 20rpx rgba(229, 186, 115, 0.25);
+$shadow-nav: 0 -4rpx 20rpx rgba(0, 0, 0, 0.04);
+
+// 动画缓动
+$transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

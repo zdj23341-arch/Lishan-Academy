@@ -1,0 +1,42 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": { "navigationBarTitleText": "力山学堂", "navigationStyle": "custom" }
+    },
+    { "path": "pages/login/index", "style": { "navigationBarTitleText": "登录" } },
+    { "path": "pages/search/index", "style": { "navigationBarTitleText": "搜索" } },
+    { "path": "pages/product/list", "style": { "navigationBarTitleText": "商品列表" } },
+    { "path": "pages/product/detail", "style": { "navigationBarTitleText": "商品详情" } },
+    { "path": "pages/order/confirm", "style": { "navigationBarTitleText": "确认订单" } },
+    { "path": "pages/order/list", "style": { "navigationBarTitleText": "我的订单" } },
+    { "path": "pages/order/detail", "style": { "navigationBarTitleText": "订单详情" } },
+    {
+      "path": "pages/order/logistics",
+      "style": { "navigationBarTitleText": "物流轨迹", "enablePullDownRefresh": true }
+    },
+    { "path": "pages/aftersale/apply", "style": { "navigationBarTitleText": "申请售后" } },
+    { "path": "pages/aftersale/detail", "style": { "navigationBarTitleText": "售后详情" } },
+    { "path": "pages/address/list", "style": { "navigationBarTitleText": "收货地址" } },
+    { "path": "pages/address/edit", "style": { "navigationBarTitleText": "编辑地址" } },
+    { "path": "pages/course/learn", "style": { "navigationBarTitleText": "课程播放" } },
+    { "path": "pages/learning/index", "style": { "navigationBarTitleText": "我的学习" } },
+    { "path": "pages/membership/index", "style": { "navigationBarTitleText": "试卷会员" } },
+    { "path": "pages/paper/list", "style": { "navigationBarTitleText": "试卷资料库" } },
+    { "path": "pages/paper/detail", "style": { "navigationBarTitleText": "试卷详情" } },
+    {
+      "path": "pages/paper/downloads",
+      "style": { "navigationBarTitleText": "我的下载", "enablePullDownRefresh": true }
+    },
+    { "path": "pages/distribution/index", "style": { "navigationBarTitleText": "分销收益中心" } },
+    { "path": "pages/distribution/withdrawal", "style": { "navigationBarTitleText": "申请提现" } },
+    { "path": "pages/profile/index", "style": { "navigationBarTitleText": "个人中心" } },
+    { "path": "pages/article/detail", "style": { "navigationBarTitleText": "精品导读" } }
+  ],
+  "globalStyle": {
+    "navigationBarTitleText": "力山学堂",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F5F7FA"
+  }
+}

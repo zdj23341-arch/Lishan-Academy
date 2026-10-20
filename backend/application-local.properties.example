@@ -1,0 +1,31 @@
+# Copy to application-local.properties and fill the empty credentials.
+# Save as UTF-8. Values are literal: no surrounding quotes.
+# A literal backslash in a value must be written as two backslashes.
+
+spring.datasource.url=jdbc:mysql://127.0.0.1:3306/wechat_jxsc?connectionTimeZone=UTC&forceConnectionTimeZoneToSession=true
+spring.datasource.username=jxsc_dev
+spring.datasource.password=
+
+# REAL: WeChat mini-program login; DEV: local fixture login.
+jxsc.providers.identity=REAL
+jxsc.wechat.app-id=
+jxsc.wechat.login.app-secret=
+
+# Other providers remain in local development mode.
+jxsc.providers.payment=DEV
+jxsc.providers.transfer=DEV
+jxsc.providers.storage=DEV
+jxsc.providers.video=DEV
+jxsc.providers.logistics=DEV
+jxsc.dev-seed.enabled=false
+
+# Optional logistics tuning (defaults apply when omitted).
+# Auto-receive window in days; allowed 1-180, default 15.
+# jxsc.logistics.auto-receive-days=15
+# Replace the default carrier whitelist with comma separated code or code:name entries.
+# jxsc.logistics.carriers=shunfeng,zhongtong,yunda
+
+# Only needed when creating the first administrator in a new database.
+# Leave password empty if an administrator already exists.
+ADMIN_BOOTSTRAP_LOGIN=local-admin
+ADMIN_BOOTSTRAP_PASSWORD=

@@ -1,0 +1,184 @@
+@import './tokens.scss';
+
+// 基础页面底色与盒模型
+page {
+  background-color: $color-bg-page;
+  color: $color-text-main;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-size: $font-size-sub;
+  line-height: $line-height-normal;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+view,
+text,
+image,
+input,
+button {
+  box-sizing: border-box;
+}
+
+// 按钮触控高度与文字行高独立，避免短标签贴在按钮顶部。
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 常用排版与文字
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 统一标准容器与卡片
+.ui-page-container {
+  min-height: 100vh;
+  padding: 0 0 calc(120rpx + env(safe-area-inset-bottom)) 0;
+  background-color: $color-bg-page;
+}
+
+.ui-card {
+  background-color: $color-bg-card;
+  border-radius: $radius-md;
+  border: 1rpx solid $color-border;
+  box-shadow: none;
+  overflow: hidden;
+  margin-bottom: $spacing-md;
+}
+
+// 语义化标签 Tag / Badge
+.ui-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rpx 12rpx;
+  border-radius: $radius-xs;
+  font-size: $font-size-caption;
+  font-weight: 500;
+  line-height: 1.2;
+
+  &--primary {
+    background-color: $color-primary-light;
+    color: $color-primary;
+  }
+
+  &--accent {
+    background-color: $color-accent-light;
+    color: $color-accent;
+  }
+
+  &--price {
+    background-color: $color-price-light;
+    color: $color-price;
+  }
+
+  &--vip {
+    background: $color-vip-gradient;
+    color: #4a320e;
+    font-weight: 600;
+  }
+
+  &--warning {
+    background-color: $color-warning-light;
+    color: $color-warning;
+  }
+
+  &--muted {
+    background-color: $color-bg-gray;
+    color: $color-text-secondary;
+  }
+}
+
+// 统一按钮体系
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88rpx;
+  padding: 0 32rpx;
+  border-radius: $radius-sm;
+  font-size: $font-size-sub;
+  font-weight: 600;
+  transition: $transition-fast;
+  border: none;
+  outline: none;
+
+  &::after {
+    display: none;
+  }
+
+  &:active {
+    opacity: 0.88;
+    transform: scale(0.98);
+  }
+
+  &--primary {
+    background: $color-primary;
+    color: $color-text-white;
+    box-shadow: 0 6rpx 16rpx rgba(47, 128, 237, 0.25);
+  }
+
+  &--accent {
+    background: $color-accent;
+    color: $color-text-white;
+    box-shadow: 0 6rpx 16rpx rgba(45, 190, 92, 0.25);
+  }
+
+  &--price {
+    background: $color-price;
+    color: $color-text-white;
+    box-shadow: 0 6rpx 16rpx rgba(255, 80, 36, 0.25);
+  }
+
+  &--vip {
+    background: $color-vip-gradient;
+    color: #452d08;
+    box-shadow: $shadow-gold;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2rpx solid $color-border;
+    color: $color-text-sub;
+  }
+
+  &--disabled {
+    background: #e5ebf3 !important;
+    color: #a0a5ba !important;
+    box-shadow: none !important;
+    transform: none !important;
+    cursor: not-allowed;
+  }
+}
+
+// 骨架屏闪烁动画
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.ui-skeleton {
+  background: linear-gradient(90deg, #f0f2f5 25%, #e6e8ec 37%, #f0f2f5 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.6s ease infinite;
+  border-radius: $radius-sm;
+}
+
+@import './design-system.scss';
